@@ -20,8 +20,8 @@ public class Client extends AbstractUser {
     private String phoneNumber;
 
     public Client(String firstname, String lastname, String phoneNumber) {
-        setFirstname(firstname);
-        setLastname(lastname);
+        setFirstName(firstname);
+        setLastName(lastname);
         this.phoneNumber = phoneNumber;
     }
 
@@ -36,16 +36,16 @@ public class Client extends AbstractUser {
                         "\t\t\tFirst Name:   %s \n" +
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n",
-                getFirstname(), getLastname(), this.phoneNumber);
+                getFirstName(), getLastName(), this.phoneNumber);
     }
 
 
-    public String getPhonenumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
     @XmlElement(name = "Phone_Number")
-    public void setPhonenumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

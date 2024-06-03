@@ -2,6 +2,7 @@ package lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.model;
 
 import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.*;
+import org.springframework.hateoas.RepresentationModel;
 
 
 /**
@@ -12,23 +13,28 @@ import jakarta.xml.bind.annotation.*;
 @XmlType(propOrder = {"id", "address", "client", "driver", "dispatch"})
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends RepresentationModel<Order> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
     private String address;
-    @OneToOne(targetEntity = Client.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Client.class, cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "client_id")
     private Client client;
-    @OneToOne(targetEntity = Driver.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Driver.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "driver_id")
     private Driver driver;
-    @OneToOne(targetEntity = Dispatch.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Dispatch.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "dispatch_id")
     private Dispatch dispatch;
 
     public Order() {
 
     }
+
+
 
     @Override
     public String toString() {
@@ -40,7 +46,7 @@ public class Order {
                 this.address, this.client, this.driver, this.dispatch);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -53,7 +59,6 @@ public class Order {
         return client;
     }
 
-    // @XmlElement(name="Order_Client")
     public void setClient(Client client) {
         this.client = client;
     }
@@ -62,7 +67,6 @@ public class Order {
         return driver;
     }
 
-    // @XmlElement(name="Order_Driver")
     public void setDriver(Driver driver) {
         this.driver = driver;
     }
@@ -71,7 +75,6 @@ public class Order {
         return dispatch;
     }
 
-    // @XmlElement(name="Order_Dispatch")
     public void setDispatch(Dispatch dispatch) {
         this.dispatch = dispatch;
     }
@@ -80,10 +83,13 @@ public class Order {
         return address;
     }
 
-    // @XmlElement(name = "Adress")
     public void setAddress(String address) {
         this.address = address;
     }
+
+
+
+
 
 
 }

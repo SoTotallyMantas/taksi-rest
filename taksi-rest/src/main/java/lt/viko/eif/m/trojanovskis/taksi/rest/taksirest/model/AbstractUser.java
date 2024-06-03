@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlTransient;
-import org.springframework.data.annotation.Id;
-
-
+import org.springframework.hateoas.RepresentationModel;
 
 
 /**
@@ -17,9 +15,9 @@ import org.springframework.data.annotation.Id;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class AbstractUser {
+public abstract class AbstractUser extends RepresentationModel<AbstractUser> {
+
     @jakarta.persistence.Id
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public int id;
@@ -34,30 +32,29 @@ public abstract class AbstractUser {
         this.id = id;
     }
 
+    public long getId() {
+        return id;
+    }
+
     @XmlElement(name = "FirstName")
 
-    public void setFirstname(String firstname) {
+    public void setFirstName(String firstname) {
         this.firstName = firstname;
     }
 
     @XmlElement(name = "Lastname")
-    public void setLastname(String lastname) {
+    public void setLastName(String lastname) {
         this.lastName = lastname;
     }
 
-    public String getFirstname() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getLastname() {
+    public String getLastName() {
         return lastName;
     }
 
 
 
-
-
-    public int getId() {
-        return id;
-    }
 }

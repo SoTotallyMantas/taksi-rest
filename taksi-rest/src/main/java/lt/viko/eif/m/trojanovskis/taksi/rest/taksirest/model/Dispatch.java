@@ -19,8 +19,8 @@ public class Dispatch extends AbstractUser {
     private String workNumber;
 
     public Dispatch(String firstname, String lastname, String phoneNumber, String workNumber) {
-        setFirstname(firstname);
-        setLastname(lastname);
+        setFirstName(firstname);
+        setLastName(lastname);
         this.phoneNumber = phoneNumber;
         this.workNumber = workNumber;
     }
@@ -37,25 +37,25 @@ public class Dispatch extends AbstractUser {
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s \n" +
                         "\t\t\tWork Number:  %s \n",
-                getFirstname(), getLastname(), this.phoneNumber, this.workNumber);
+                getFirstName(), getLastName(), this.phoneNumber, this.workNumber);
     }
 
-    public String getPhonenumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
     @XmlElement(name = "Phone_Number")
-    public void setPhonenumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
 
-    public String getWorknumber() {
+    public String getWorkNumber() {
         return workNumber;
     }
 
     @XmlElement(name = "Work_Number")
-    public void setWorknumber(String workNumber) {
+    public void setWorkNumber(String workNumber) {
         this.workNumber = workNumber;
     }
 }

@@ -1,0 +1,8 @@
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.config
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.controller
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.database
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.Exception
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.model
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.ModelAssambler
+lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.Service

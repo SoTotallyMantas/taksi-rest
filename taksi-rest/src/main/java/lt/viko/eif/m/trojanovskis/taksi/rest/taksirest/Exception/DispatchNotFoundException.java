@@ -1,5 +1,9 @@
 package lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.Exception;
 
+/**
+ * This class is responsible for DispatchNotFoundException
+ * it extends RuntimeException
+ */
 public class DispatchNotFoundException extends RuntimeException{
     public DispatchNotFoundException(Long id) {
         super("Could not find Dispatch " + id);

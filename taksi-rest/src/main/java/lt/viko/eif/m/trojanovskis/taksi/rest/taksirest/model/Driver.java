@@ -19,8 +19,8 @@ public class Driver extends AbstractUser {
     private String licensePlate;
 
     public Driver(String firstname, String lastname, String phoneNumber, String licensePlate) {
-        setFirstname(firstname);
-        setLastname(lastname);
+        setFirstName(firstname);
+        setLastName(lastname);
         this.phoneNumber = phoneNumber;
         this.licensePlate = licensePlate;
     }
@@ -37,25 +37,25 @@ public class Driver extends AbstractUser {
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n" +
                         "\t\t\tLicense Plate:    %s \n",
-                getFirstname(), getLastname(), this.phoneNumber, this.licensePlate);
+                getFirstName(), getLastName(), this.phoneNumber, this.licensePlate);
     }
 
 
-    public String getPhonenumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
     @XmlElement(name = "Phone_Number")
-    public void setPhonenumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getLicenseplate() {
+    public String getLicensePlate() {
         return licensePlate;
     }
 
     @XmlElement(name = "License_Plate")
-    public void setLicenseplate(String licenseplate) {
+    public void setLicensePlate(String licenseplate) {
         this.licensePlate = licenseplate;
     }
 }

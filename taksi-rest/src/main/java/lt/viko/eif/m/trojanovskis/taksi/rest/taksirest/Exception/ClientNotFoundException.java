@@ -1,5 +1,8 @@
 package lt.viko.eif.m.trojanovskis.taksi.rest.taksirest.Exception;
-
+/**
+ * This class is responsible for ClientNotFoundException
+ * it extends RuntimeException
+ */
 public class ClientNotFoundException extends RuntimeException{
     public ClientNotFoundException(Long id) {
         super("Could not find Client " + id);
